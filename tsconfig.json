@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,9 +19,23 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@backend/*": ["./amplify/*"],
+      "@/selection-sets": ["../common/selection-sets"],
+      "@common/*": ["../common/*"],
+      "@/*": ["./src/*"],
+      "@app/*": ["./*"],
+      "@services/*": ["./src/services/*"],
+      "@components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "scripts/calendly-webhooks-manager/create-calendly-webhook.mjs",
+    "../common/selection-sets.ts",
+    "amplify/common/ed-utils/enums-to-string.ts"
+  ],
+  "exclude": ["node_modules", "amplify"]
 }
